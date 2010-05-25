@@ -8,7 +8,7 @@
 
 #ifdef INCLUDES_REGEX
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSString (HTML)
 

@@ -6,7 +6,7 @@
 //  Copyright 2009 Probably Interactive. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 
 @interface NSObject (Inspection)
