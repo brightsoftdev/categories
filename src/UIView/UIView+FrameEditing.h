@@ -19,8 +19,12 @@
 - (UIView *)setFrameWidth:(float)width;
 
 - (UIView *)setFrameLeft:(float)left;
+- (UIView *)setFrameRight:(float)right;
 - (UIView *)setFrameBottom:(float)bottom;
 - (UIView *)setFrameTop:(float)top;
+
+- (UIView *)strechFrameBottom:(float)bottom;
+- (UIView *)strechFrameTop:(float)top;
 
 - (float)frameWidth;
 - (float)frameHeight;
