@@ -1,6 +1,6 @@
 //
 //  NSString+Formatting.m
-//  Fluenz
+//  Probably Interactive
 //
 //  Created by ProbablyInteractive on 4/8/09.
 //  Copyright 2009 Probably Interactive. All rights reserved.
@@ -16,7 +16,7 @@
 	
 	BOOL shouldUppercase = NO;
 
-	for (int i = 0; i < [self length]; i++) {
+	for (uint i = 0; i < [self length]; i++) {
 		NSString *currChar = [self substringWithRange:NSMakeRange(i, 1)];
 		if ([currChar isEqualToString:@"_"]) {
 			shouldUppercase = YES;

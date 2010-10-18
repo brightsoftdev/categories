@@ -1,6 +1,6 @@
 //
 //  NSObject+Inspection.m
-//  Fluenz
+//  Probably Interactive
 //
 //  Created by ProbablyInteractive on 4/17/09.
 //  Copyright 2009 Probably Interactive. All rights reserved.
@@ -16,7 +16,7 @@
 	methodArray = class_copyMethodList(self, &methodCount);
 	
 	NSMutableArray *methods = [NSMutableArray array];
-	for (int i = 0; i < methodCount; i++) {
+	for (uint i = 0; i < methodCount; i++) {
 		Method method = methodArray[i];
 		NSString *name = NSStringFromSelector(method_getName(method));
 		[methods addObject:name];

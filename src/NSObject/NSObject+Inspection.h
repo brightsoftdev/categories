@@ -1,6 +1,6 @@
 //
 //  NSObject+Inspection.h
-//  Fluenz
+//  Probably Interactive
 //
 //  Created by ProbablyInteractive on 4/17/09.
 //  Copyright 2009 Probably Interactive. All rights reserved.
