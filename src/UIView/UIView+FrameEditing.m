@@ -13,33 +13,33 @@
 
 // Get Methods
 // -----------
-- (float)frameWidth {
+- (CGFloat)frameWidth {
 	return self.frame.size.width;
 }
 
-- (float)frameHeight {
+- (CGFloat)frameHeight {
 	return self.frame.size.height;
 }
 
-- (float)frameTop {
+- (CGFloat)frameTop {
 	return self.frame.origin.y;
 }
 
-- (float)frameBottom {
+- (CGFloat)frameBottom {
 	return self.frame.origin.y + self.frame.size.height;
 }
 
-- (float)frameLeft {
+- (CGFloat)frameLeft {
 	return self.frame.origin.x;
 }
 
-- (float)frameRight {
+- (CGFloat)frameRight {
 	return self.frame.origin.x + self.frame.size.width;
 }
 
 - (CGPoint)frameCenter {
-	float xCenter = (self.frame.size.width / 2.0) + self.frame.origin.x;
-	float yCenter = (self.frame.size.height / 2.0) + self.frame.origin.y;
+	CGFloat xCenter = (self.frame.size.width / 2.0) + self.frame.origin.x;
+	CGFloat yCenter = (self.frame.size.height / 2.0) + self.frame.origin.y;
 	
 	return CGPointMake(xCenter, yCenter);
 }
@@ -47,7 +47,7 @@
 
 // Set Methods
 // -----------
-- (UIView *)addToY:(float)value {
+- (UIView *)addToY:(CGFloat)value {
 	CGRect frame = self.frame;
 	frame.origin.y += value;	
 	self.frame = frame;	
@@ -55,7 +55,7 @@
         
 }
 
-- (UIView *)setFrameX:(float)x {
+- (UIView *)setFrameX:(CGFloat)x {
 	CGRect frame = self.frame;
 	frame.origin.x = x;
 	
@@ -63,7 +63,7 @@
 	return self;
 }
 
-- (UIView *)setFrameY:(float)y {
+- (UIView *)setFrameY:(CGFloat)y {
 	CGRect frame = self.frame;
 	frame.origin.y = y;
 	
@@ -71,7 +71,7 @@
 	return self;
 }
 
-- (UIView *)setFrameWidth:(float)width {
+- (UIView *)setFrameWidth:(CGFloat)width {
 	CGRect frame = self.frame;
 	frame.size.width = width;
 	
@@ -79,7 +79,7 @@
 	return self;
 }
 
-- (UIView *)setFrameHeight:(float)height {
+- (UIView *)setFrameHeight:(CGFloat)height {
 	CGRect frame = self.frame;
 	frame.size.height = height;
 
@@ -87,31 +87,31 @@
 	return self;
 }
 
-- (UIView *)setFrameLeft:(float)left {
+- (UIView *)setFrameLeft:(CGFloat)left {
     [self setFrameX:left];
     return self;
 }
 
-- (UIView *)setFrameRight:(float)right {
+- (UIView *)setFrameRight:(CGFloat)right {
     CGRect frame = self.frame;	
 	frame.origin.x = right - self.frame.size.width;
 	self.frame = frame;	
 	return self;
 }
 
-- (UIView *)setFrameBottom:(float)bottom {
+- (UIView *)setFrameBottom:(CGFloat)bottom {
     CGRect frame = self.frame;	
 	frame.origin.y = bottom - self.frame.size.height;
 	self.frame = frame;	
 	return self;
 }
 
-- (UIView *)setFrameTop:(float)top {
+- (UIView *)setFrameTop:(CGFloat)top {
     [self setFrameY:top];
     return self;
 }
 
-- (UIView *)strechFrameTop:(float)top {
+- (UIView *)strechFrameTop:(CGFloat)top {
 	CGRect frame = self.frame;	
 	frame.size.height = (frame.origin.y + frame.size.height) - top;	
 	frame.origin.y = top;
@@ -119,7 +119,7 @@
 	return self;
 }
 
-- (UIView *)strechFrameBottom:(float)bottom {
+- (UIView *)strechFrameBottom:(CGFloat)bottom {
 	CGRect frame = self.frame;
 	frame.size.height = bottom - frame.origin.y;	
 	self.frame = frame;	

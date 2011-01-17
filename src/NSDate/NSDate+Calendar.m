@@ -34,10 +34,9 @@
 
 #import "NSDate+Calendar.h"
 
-
 @implementation NSDate(Calendar)
 
-+ (id)today{
++ (NSDate *)today {
     NSDate *theDate = [NSDate date];
     
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:theDate];
@@ -50,27 +49,27 @@
     return [[NSCalendar currentCalendar] dateFromComponents:comps];
 }
 
-- (int)year{
+- (NSInteger)year {
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit) fromDate:self];
     return [comps year];
 }
 
-- (int)month{
+- (NSInteger)month {
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSMonthCalendarUnit) fromDate:self];
     return [comps month];
 }
 
-- (int)day{
+- (NSInteger)day {
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSDayCalendarUnit) fromDate:self];
     return [comps day];
 }
 
-- (int)weekday{
+- (NSInteger)weekday {
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSWeekdayCalendarUnit) fromDate:self];
     return [comps weekday];
 }
 
-- (NSDate *)firstDayOfCurrentMonth{
+- (NSDate *)firstDayOfCurrentMonth {
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self];
     [comps setDay:1];
     
@@ -78,7 +77,7 @@
     
 }
 
-- (NSDate *)firstDayOfCurrentWeek{
+- (NSDate *)firstDayOfCurrentWeek {
     NSDateComponents *adjustmentComps = [[NSDateComponents alloc] init];
     [adjustmentComps setDay:-([self weekday]-1)];
     NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:adjustmentComps toDate:self options:0];
@@ -86,7 +85,7 @@
     return newDate;
 }
 
-- (NSDate *)dateByAddingYears:(int)years months:(int)months days:(int)days hours:(int)hours minutes:(int)minutes seconds:(int)seconds{
+- (NSDate *)dateByAddingYears:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
     NSDateComponents *adjustmentComps = [[NSDateComponents alloc] init];
     [adjustmentComps setYear:years];
     [adjustmentComps setMonth:months];
@@ -98,8 +97,6 @@
     [adjustmentComps release];
     return newDate;
 }
-
-
 
 
 @end

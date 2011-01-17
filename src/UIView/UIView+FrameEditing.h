@@ -11,27 +11,27 @@
 
 @interface UIView (FrameEditing)
 
-- (UIView *)addToY:(float)value;
+- (UIView *)addToY:(CGFloat)value;
 
-- (UIView *)setFrameX:(float)x;
-- (UIView *)setFrameY:(float)y;
-- (UIView *)setFrameHeight:(float)height;
-- (UIView *)setFrameWidth:(float)width;
+- (UIView *)setFrameX:(CGFloat)x;
+- (UIView *)setFrameY:(CGFloat)y;
+- (UIView *)setFrameHeight:(CGFloat)height;
+- (UIView *)setFrameWidth:(CGFloat)width;
 
-- (UIView *)setFrameLeft:(float)left;
-- (UIView *)setFrameRight:(float)right;
-- (UIView *)setFrameBottom:(float)bottom;
-- (UIView *)setFrameTop:(float)top;
+- (UIView *)setFrameLeft:(CGFloat)left;
+- (UIView *)setFrameRight:(CGFloat)right;
+- (UIView *)setFrameBottom:(CGFloat)bottom;
+- (UIView *)setFrameTop:(CGFloat)top;
 
-- (UIView *)strechFrameBottom:(float)bottom;
-- (UIView *)strechFrameTop:(float)top;
+- (UIView *)strechFrameBottom:(CGFloat)bottom;
+- (UIView *)strechFrameTop:(CGFloat)top;
 
-- (float)frameWidth;
-- (float)frameHeight;
-- (float)frameTop;
-- (float)frameBottom;
-- (float)frameLeft;
-- (float)frameRight;
+- (CGFloat)frameWidth;
+- (CGFloat)frameHeight;
+- (CGFloat)frameTop;
+- (CGFloat)frameBottom;
+- (CGFloat)frameLeft;
+- (CGFloat)frameRight;
 - (CGPoint)frameCenter;
 
 @end
