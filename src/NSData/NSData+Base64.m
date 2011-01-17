@@ -12,11 +12,12 @@ static char encodingTable[64] = {
 		'w','x','y','z','0','1','2','3','4','5','6','7','8','9','+','/' };
 
 @implementation NSData (NSDataAdditions)
-+ (NSData *) dataWithBase64EncodedString:(NSString *) string {
+
++ (NSData *)dataWithBase64EncodedString:(NSString *)string {
 	return [[[NSData allocWithZone:nil] initWithBase64EncodedString:string] autorelease];
 }
 
-- (id) initWithBase64EncodedString:(NSString *) string {
+- (id)initWithBase64EncodedString:(NSString *)string {
 	NSMutableData *mutableData = nil;
 
 	if( string ) {
@@ -84,11 +85,11 @@ static char encodingTable[64] = {
 
 #pragma mark -
 
-- (NSString *) base64Encoding {
+- (NSString *)base64Encoding {
 	return [self base64EncodingWithLineLength:0];
 }
 
-- (NSString *) base64EncodingWithLineLength:(unsigned int) lineLength {
+- (NSString *)base64EncodingWithLineLength:(unsigned int)lineLength {
 	const unsigned char	*bytes = [self bytes];
 	NSMutableString *result = [NSMutableString stringWithCapacity:[self length]];
 	unsigned long ixtext = 0;
@@ -146,14 +147,15 @@ static char encodingTable[64] = {
 
 #pragma mark -
 
-- (BOOL) hasPrefix:(NSData *) prefix {
+- (BOOL)hasPrefix:(NSData *)prefix {
 	unsigned int length = [prefix length];
 	if( ! prefix || ! length || [self length] < length ) return NO;
 	return ( memcmp( [self bytes], [prefix bytes], length ) == 0 );
 }
 
-- (BOOL) hasPrefixBytes:(void *) prefix length:(unsigned int) length {
+- (BOOL)hasPrefixBytes:(void *)prefix length:(unsigned int)length {
 	if( ! prefix || ! length || [self length] < length ) return NO;
 	return ( memcmp( [self bytes], prefix, length ) == 0 );
 }
+
 @end

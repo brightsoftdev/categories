@@ -6,7 +6,7 @@
 //
 //
 //  NSCalendarDate does not exist in CocoaTouch on the iPhone. So I made this category to put 
-//  a little of the support I needed from NSCalendarDate into NSDate
+//  a little of the support I needed from NSCalendarDate NSIntegero NSDate
 //
 //
 //  The MIT License
@@ -34,13 +34,13 @@
 
 @interface NSDate(Calendar)
 
-    +(id)today;
-    -(int)year;
-    -(int)month;
-    -(int)day;
-    -(int)weekday;
-    -(NSDate *)firstDayOfCurrentMonth;
-    -(NSDate *)firstDayOfCurrentWeek;
-    -(NSDate *)dateByAddingYears:(int)years months:(int)months days:(int)days hours:(int)hours minutes:(int)minutes seconds:(int)seconds;
++ (NSDate *)today;
+- (NSInteger)year;
+- (NSInteger)month;
+- (NSInteger)day;
+- (NSInteger)weekday;
+- (NSDate *)firstDayOfCurrentMonth;
+- (NSDate *)firstDayOfCurrentWeek;
+- (NSDate *)dateByAddingYears:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
 
 @end

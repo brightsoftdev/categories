@@ -8,60 +8,60 @@
 
 @implementation UIColor (Components)
 
--(BOOL)isMonochrome {
+- (BOOL)isMonochrome {
 	return kCGColorSpaceModelMonochrome == CGColorSpaceGetModel(CGColorGetColorSpace([self CGColor]));
 }
 
--(CGFloat)red {
+- (CGFloat)red {
 	return CGColorGetComponents([self CGColor])[0];
 }
 
--(CGFloat)green {
+- (CGFloat)green {
 	const CGFloat *colors = CGColorGetComponents([self CGColor]);
 	return [self isMonochrome] ? colors[0] : colors[1];
 }
 
--(CGFloat)blue {
+- (CGFloat)blue {
 	const CGFloat *colors = CGColorGetComponents([self CGColor]);
 	return [self isMonochrome] ? colors[0] : colors[2];
 }
 
--(CGFloat)hue {
+- (CGFloat)hue {
 	float hfa[4];
 	[self hsba:hfa];
 	return hfa[0];
 }
 
--(CGFloat)saturation {
+- (CGFloat)saturation {
 	float hfa[4];
 	[self hsba:hfa];
 	return hfa[1];
 }
 
--(CGFloat)brightness {
+- (CGFloat)brightness {
 	float hfa[4];
 	[self hsba:hfa];
 	return hfa[2];
 }
 
 
--(CGFloat)alpha {
+- (CGFloat)alpha {
 	return CGColorGetAlpha([self CGColor]);
 }
 
--(void)rgba:(float[4])arr {
+- (void)rgba:(float[4])arr {
 	arr[0]=[self red];
 	arr[1]=[self green];
 	arr[2]=[self blue];
 	arr[3]=[self alpha];
 }
--(void)hsba:(float[4])arr {
+
+- (void)hsba:(float[4])arr {
 	arr[3]=[self alpha];
 	RGB2HSL([self red], [self green], [self blue], &arr[0],&arr[1],&arr[2]);
-	
 }
 
--(UIColor *)getReverseColor {
+- (UIColor *)getReverseColor {
 	return [UIColor colorWithRed:1-[self red] green:1-[self green] blue:1-[self blue] alpha:[self alpha]];
 }
 

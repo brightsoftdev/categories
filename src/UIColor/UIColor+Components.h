@@ -11,22 +11,22 @@
 
 @interface UIColor (Components)
 
--(BOOL)isMonochrome;
+- (BOOL)isMonochrome;
 
--(CGFloat)red;
--(CGFloat)green;
--(CGFloat)blue;
+- (CGFloat)red;
+- (CGFloat)green;
+- (CGFloat)blue;
 
--(CGFloat)hue;
--(CGFloat)saturation;
--(CGFloat)brightness;
+- (CGFloat)hue;
+- (CGFloat)saturation;
+- (CGFloat)brightness;
 
--(CGFloat)alpha;
+- (CGFloat)alpha;
 
--(void)rgba:(float[4])arr;
--(void)hsba:(float[4])arr;
+- (void)rgba:(float[4])arr;
+- (void)hsba:(float[4])arr;
 
--(UIColor *)getReverseColor;
+- (UIColor *)getReverseColor;
 	
 @end
 
